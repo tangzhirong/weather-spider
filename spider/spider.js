@@ -2,7 +2,7 @@ var http = require("http");
 var fs = require('fs');
 var cheerio = require("cheerio");
 var iconv = require('iconv-lite');
-var Promise = require('bluebird')
+var Promise = require('bluebird');
 
 function download(url) {
   return new Promise(function(resolve,reject){
@@ -39,7 +39,7 @@ download(url).then(function(data){
 
               var district_id = $(this).attr("href").split("/")[2].split(".")[0];
               console.log(district_id);
-              fs.appendFileSync("district_id.txt",district_id+"\n");
+              // fs.appendFileSync("district_id.txt",district_id+"\n");
 
               var request = "http://tianqi.2345.com/t/wea_history/js/201610/"+district_id+"_201610.js";
 
